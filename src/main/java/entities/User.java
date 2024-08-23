@@ -32,6 +32,16 @@ public class User {
     public User() {
     }
 
+    public User(String name, String surname, LocalDate birthDate, long cardNumber) {
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
+        this.cardNumber = cardNumber;
+
+    }
+
+
+
     public UUID getId() {
         return id;
     }
