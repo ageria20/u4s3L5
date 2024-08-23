@@ -7,6 +7,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.spi.LocaleNameProvider;
 
@@ -31,7 +32,9 @@ public class LoanDAO {
     }
 
     public List<Loan> getExpiredLoan(){
-        TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l WHERE l.actualReturn > l.expectedReturn AND l.actualReturn IS NULL", Loan.class);
+        TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l WHERE l.expectedReturn < :today AND l.actualReturn IS NULL", Loan.class);
+        // si potrebbe fare anche con CURRENT_DATE ma forse così è più leggibile
+        query.setParameter("today", LocalDate.now());
         return query.getResultList();
     }
 

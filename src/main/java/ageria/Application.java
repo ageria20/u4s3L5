@@ -226,7 +226,7 @@ public class Application {
 
 
         System.out.println("Expired Loan RESULTS");
-        System.out.println(ld);
+
         ld.getExpiredLoan().forEach(System.out::println);
         /*cd.save(nationalGeographic);
         cd.save(timeMagazine);
