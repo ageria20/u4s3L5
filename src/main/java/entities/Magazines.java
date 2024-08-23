@@ -17,7 +17,7 @@ public class Magazines extends Catalog{
 
 
     @ManyToOne
-    @JoinColumn(name = "magazine")
+    @JoinColumn(name = "magazine", nullable = false)
     private Magazines magazine;
 
 

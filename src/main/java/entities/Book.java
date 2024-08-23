@@ -17,7 +17,7 @@ public class Book extends Catalog{
     private String genre;
 
     @ManyToOne
-    @JoinColumn(name = "book")
+    @JoinColumn(name = "book", nullable = false)
     private Book book;
 
     public Book() {

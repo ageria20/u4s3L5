@@ -13,7 +13,7 @@ import java.util.UUID;
 public abstract class Catalog {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID ISBN;
 
     @Column(name = "title")
