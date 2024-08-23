@@ -9,6 +9,7 @@ import java.util.UUID;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name="catalog_type")
+@NamedQuery(name="findByTitleOrPArtOfIt", query="SELECT c FROM Catalog c WHERE LOWER(c.title) LIKE LOWER(:title)")
 public abstract class Catalog {
 
     @Id

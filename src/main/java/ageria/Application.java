@@ -1,6 +1,8 @@
 package ageria;
 
 import dao.CatalogDAO;
+import dao.LoanDAO;
+import dao.UserDAO;
 import entities.Book;
 import entities.Magazines;
 import entities.User;
@@ -18,6 +20,8 @@ public class Application {
 
         EntityManager em = emf.createEntityManager();
         CatalogDAO cd = new CatalogDAO(em);
+        UserDAO ud = new UserDAO(em);
+        LoanDAO ld = new LoanDAO(em);
 
 
 
@@ -55,6 +59,15 @@ public class Application {
         System.out.println("SEARCH BY PUBBLISHED DATE");
         cd.findByPubblishedDate("2024-08-01").forEach(System.out::println);
 */
+        ud.saveUser(frodo);
+        ud.saveUser(aragorn);
+        ud.saveUser(legolas);
+        ud.saveUser(gandalf);
+
+     /*   System.out.println("SEARCH BY TITLE OR PART OF IT");
+        cd.findByTitleOrPArtOfIt("time").forEach(System.out::println);
+*/
+
 
         /*cd.save(nationalGeographic);
         cd.save(timeMagazine);

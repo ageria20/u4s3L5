@@ -55,12 +55,14 @@ public class CatalogDAO {
 
 
     public List<Catalog> findByAuthor(String author){
-        TypedQuery<Catalog> query = em.createQuery("SELECT c FROM Catalog c WHERE c.author = :author", Catalog.class);
+        TypedQuery<Catalog> query = em.createQuery("SELECT c FROM Catalog c WHERE LOWER(c.author) LIKE LOWER(:author)", Catalog.class);
         query.setParameter("author", author);
         return query.getResultList();
     }
 
     public List<Catalog> findByTitleOrPArtOfIt(String str){
-
+    TypedQuery<Catalog> query = em.createNamedQuery("findByTitleOrPArtOfIt", Catalog.class);
+    query.setParameter("title", "%" + str + "%");
+    return query.getResultList();
     }
 }
