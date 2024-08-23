@@ -119,7 +119,7 @@ public class Application {
                 null, // Returned 2 days late
                 aragornFromDB
         );
-       /* Loan loan9 = new Loan(
+        Loan loan9 = new Loan(
                 elementFromDb,
                 LocalDate.of(2024, 1, 1),
                 LocalDate.of(2024, 1, 10).plusMonths(1),
@@ -185,11 +185,9 @@ public class Application {
                 LocalDate.of(2024, 4, 30).plusMonths(1),
                 LocalDate.of(2024, 6, 1), // Returned 2 days late
                 gandalfFromDB
-        );*/
+        );
 
         // loan save
-   /*     ld.saveLoan(loan1);
-        ld.saveLoan(loan2);*/
 
 
 
