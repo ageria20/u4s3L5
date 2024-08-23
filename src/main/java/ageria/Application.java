@@ -1,5 +1,6 @@
 package ageria;
 
+import dao.CatalogDAO;
 import entities.Book;
 import entities.Magazines;
 import entities.User;
@@ -16,6 +17,8 @@ public class Application {
     public static void main(String[] args) {
 
         EntityManager em = emf.createEntityManager();
+        CatalogDAO cd = new CatalogDAO(em);
+
 
 
         Book harryPotter1 = new Book("Harry Potter and the Philosopher's Stone", LocalDate.of(1997, 6, 26), 223, "J.K. Rowling", "Fantasy");
@@ -32,6 +35,25 @@ public class Application {
         User aragorn = new User( "Aragorn", "Elessar", LocalDate.of(2931, 3, 1), 987654321L);
         User legolas = new User( "Legolas", "Greenleaf", LocalDate.of(1000, 1, 1), 555555555L);
         User gandalf = new User( "Gandalf", "The Grey", LocalDate.of(2019, 1, 1), 111111111L);
+
+        // book saved
+       /* cd.save(harryPotter1);
+        cd.save(harryPotter2);
+        cd.save(harryPotter3);
+        cd.save(harryPotter4);*/
+
+        /*System.out.println("SEARCH BY AUTHOR");
+        cd.findByAuthor("J.K. Rowling").forEach(System.out::println);*/
+
+        // 
+       /* cd.deleteByISBN("19b251b4-778a-49cb-ad5a-36aaf55fa214");*/
+
+
+        /*cd.save(nationalGeographic);
+        cd.save(timeMagazine);
+        cd.save(vogue);
+        cd.save(economist);
+*/
 
 
         System.out.println("TUTTO OK!");

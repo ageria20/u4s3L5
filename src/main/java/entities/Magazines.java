@@ -31,7 +31,11 @@ public class Magazines extends Catalog{
     public Magazines(String title, LocalDate publishDate, int pages, Periodicity periodicity) {
         super(title, publishDate, pages);
         this.periodicity = periodicity;
+
     }
+
+
+
 
     public Periodicity getPeriodicity() {
         return periodicity;
