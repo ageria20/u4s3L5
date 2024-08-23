@@ -19,7 +19,7 @@ public abstract class Catalog {
     private String title;
 
     @Column(name="publishedDate")
-    private LocalDate publishDate;
+    private LocalDate publishedDate;
 
     @Column(name="pages")
     private int pages;
@@ -35,7 +35,7 @@ public abstract class Catalog {
 
     public Catalog(String title, LocalDate publishDate, int pages) {
         this.title = title;
-        this.publishDate = publishDate;
+        this.publishedDate = publishDate;
         this.pages = pages;
     }
 
@@ -56,11 +56,11 @@ public abstract class Catalog {
     }
 
     public LocalDate getPublishDate() {
-        return publishDate;
+        return publishedDate;
     }
 
     public void setPublishDate(LocalDate publishDate) {
-        this.publishDate = publishDate;
+        this.publishedDate = publishDate;
     }
 
     public int getPages() {

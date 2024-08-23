@@ -7,6 +7,7 @@ import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.UUID;
 
@@ -39,15 +40,27 @@ public class CatalogDAO {
         System.out.println("Element deleted correctly");
     }
 
-    public List<Catalog> findByPubblishedDate(String date){
-        TypedQuery<Catalog> query = em.createQuery("SELECT c FROM Catalog c WHERE c.publishedDate = :date", Catalog.class);
-        query.setParameter("date", date);
-        return query.getResultList();
+    public List<Catalog> findByPubblishedDate(String date) {
+        try {
+            LocalDate pubblishedDate = LocalDate.parse(date);
+            TypedQuery<Catalog> query = em.createQuery("SELECT c FROM Catalog c WHERE c.publishedDate = :date", Catalog.class);
+            query.setParameter("date", pubblishedDate);
+            return query.getResultList();
+        } catch (DateTimeParseException ex) {
+            // Gestione dell'errore nel caso in cui la stringa non sia un formato valido per LocalDate
+            System.out.println("Errore: la data fornita non è in un formato valido. Usa il formato 'YYYY-MM-DD'.");
+            return null;
+        }
     }
+
 
     public List<Catalog> findByAuthor(String author){
         TypedQuery<Catalog> query = em.createQuery("SELECT c FROM Catalog c WHERE c.author = :author", Catalog.class);
         query.setParameter("author", author);
         return query.getResultList();
+    }
+
+    public List<Catalog> findByTitleOrPArtOfIt(String str){
+
     }
 }

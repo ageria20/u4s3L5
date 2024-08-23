@@ -47,8 +47,11 @@ public class Magazines extends Catalog{
 
     @Override
     public String toString() {
-        return "Magazines{" +
-                "periodicity=" + periodicity +
+        return "Magazines{ " +
+                " ISBN=" + this.getISBN() +
+                " title=" + this.getTitle() +
+                " Pages=" + this.getPages() +
+                " periodicity=" + periodicity +
                 '}';
     }
 }

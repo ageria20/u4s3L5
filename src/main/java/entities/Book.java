@@ -52,10 +52,10 @@ public class Book extends Catalog{
 
     @Override
     public String toString() {
-        return "Book{" +
-                "ISBN='" + this.getISBN() + '\'' +
-                "title='" + this.getTitle() + '\'' +
-                "author='" + author + '\'' +
+        return "Book{ " +
+                " ISBN='" + this.getISBN() + '\'' +
+                " title='" + this.getTitle() + '\'' +
+                " author='" + author + '\'' +
                 ", genre='" + genre + '\'' +
                 '}';
     }

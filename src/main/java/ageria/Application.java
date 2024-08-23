@@ -45,9 +45,16 @@ public class Application {
         /*System.out.println("SEARCH BY AUTHOR");
         cd.findByAuthor("J.K. Rowling").forEach(System.out::println);*/
 
-        // 
+
        /* cd.deleteByISBN("19b251b4-778a-49cb-ad5a-36aaf55fa214");*/
 
+/*
+        System.out.println("SEARCH BY ISBN");
+        System.out.println(cd.findById("11cf0f4f-8616-497c-a373-be3e0cb220bf"));
+
+        System.out.println("SEARCH BY PUBBLISHED DATE");
+        cd.findByPubblishedDate("2024-08-01").forEach(System.out::println);
+*/
 
         /*cd.save(nationalGeographic);
         cd.save(timeMagazine);
