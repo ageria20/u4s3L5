@@ -33,7 +33,7 @@ public class Application {
         User legolas = new User( "Legolas", "Greenleaf", LocalDate.of(1000, 1, 1), 555555555L);
         User gandalf = new User( "Gandalf", "The Grey", LocalDate.of(2019, 1, 1), 111111111L);
 
-        
+
         System.out.println("TUTTO OK!");
     }
 }

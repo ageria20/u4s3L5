@@ -34,6 +34,15 @@ public class Loan {
     public Loan() {
     }
 
+    public Loan( Catalog loanedElement, LocalDate startLoan, LocalDate expectedReturn, LocalDate actualReturn, User user) {
+
+        this.loanedElement = loanedElement;
+        this.startLoan = startLoan;
+        this.expectedReturn = expectedReturn;
+        this.actualReturn = actualReturn;
+        this.user = user;
+    }
+
     public UUID getLoan_id() {
         return loan_id;
     }
@@ -94,12 +103,5 @@ public class Loan {
                 '}';
     }
 
-    public Loan( Catalog loanedElement, LocalDate startLoan, LocalDate expectedReturn, LocalDate actualReturn, User user) {
 
-        this.loanedElement = loanedElement;
-        this.startLoan = startLoan;
-        this.expectedReturn = expectedReturn;
-        this.actualReturn = actualReturn;
-        this.user = user;
-    }
 }
