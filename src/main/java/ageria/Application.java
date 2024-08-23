@@ -236,5 +236,7 @@ public class Application {
 
 
         System.out.println("TUTTO OK!");
+        em.close();
+        emf.close();
     }
 }
