@@ -73,7 +73,7 @@ public class Application {
                 element3FromDb,
                 LocalDate.of(2024, 3, 20),
                 LocalDate.of(2024, 1, 10).plusMonths(1),
-                LocalDate.of(2024, 4, 18), // Returned early
+                null, // Returned early
                 frodoFromDB
         );
 
@@ -89,7 +89,7 @@ public class Application {
                 element8FromDb,
                 LocalDate.of(2024, 1, 5),
                 LocalDate.of(2024, 1, 10).plusMonths(1),
-                LocalDate.of(2024, 2, 6), // Returned 1 day late
+                null, // Returned 1 day late
                 aragornFromDB
         );
 
@@ -116,7 +116,7 @@ public class Application {
                 element5FromDb,
                 LocalDate.of(2024, 4, 20),
                 LocalDate.of(2024, 4, 20).plusMonths(1),
-                LocalDate.of(2024, 5, 22), // Returned 2 days late
+                null, // Returned 2 days late
                 aragornFromDB
         );
        /* Loan loan9 = new Loan(
@@ -188,9 +188,10 @@ public class Application {
         );*/
 
         // loan save
-        /*ld.saveLoan(loan1);
-        ld.saveLoan(loan2);
-        */
+   /*     ld.saveLoan(loan1);
+        ld.saveLoan(loan2);*/
+
+
 
         // book saved
        /* cd.save(harryPotter1);
@@ -221,9 +222,12 @@ public class Application {
 
 
 */
-        ld.getLoanByCardNumber(111111111L).forEach(System.out::println);
+       /* ld.getLoanByCardNumber(111111111L).forEach(System.out::println);*/
 
 
+        System.out.println("Expired Loan RESULTS");
+
+        ld.getExpiredLoan().forEach(System.out::println);
         /*cd.save(nationalGeographic);
         cd.save(timeMagazine);
         cd.save(vogue);

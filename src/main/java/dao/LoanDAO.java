@@ -31,7 +31,8 @@ public class LoanDAO {
     }
 
     public List<Loan> getExpiredLoan(){
-        
+        TypedQuery<Loan> query = em.createQuery("SELECT l FROM Loan l WHERE l.actualReturn > l.expectedReturn AND l.actualReturn IS NULL", Loan.class);
+        return query.getResultList();
     }
 
 
