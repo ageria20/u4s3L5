@@ -14,7 +14,7 @@ public class Loan {
     @GeneratedValue
     private UUID loan_id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "loaned_element")
     private Catalog loanedElement;
 
